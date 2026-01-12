@@ -1,36 +1,56 @@
-import Link from "next/link";
-import { ReactNode } from "react";
+'use client';
 
-interface ButtonProps {
+import Link from 'next/link';
+import { ReactNode, ComponentProps } from 'react';
+
+type ButtonProps = ComponentProps<'button'> & {
   children: ReactNode;
   href?: string;
-  variant?: "primary" | "secondary";
-  onClick?: () => void;
-  disabled?: boolean;
+  variant?: 'primary' | 'secondary';
   className?: string;
-}
+};
 
 export default function Button({
   children,
   href,
-  variant = "primary",
+  variant = 'primary',
   onClick,
   disabled = false,
-  className = "",
+  className = '',
+  type = 'button',
+  ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed";
-  
+    'inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed';
+
   const variantStyles = {
     primary:
-      "bg-[var(--color-primary)] text-white hover:bg-[var(--color-cta-hover)]",
+      'bg-[var(--color-primary)] text-white hover:bg-[var(--color-cta-hover)]',
     secondary:
-      "border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white",
+      'border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white',
   };
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
 
   if (href && !disabled) {
+    // Handle hash links (same-page anchors) with scroll behavior
+    if (href.startsWith('#')) {
+      return (
+        <a
+          href={href}
+          className={combinedClassName}
+          onClick={(e) => {
+            e.preventDefault();
+            const element = document.querySelector(href);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }}
+        >
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={combinedClassName}>
         {children}
@@ -40,13 +60,16 @@ export default function Button({
 
   return (
     <button
+      type={type}
       onClick={onClick}
       disabled={disabled}
       className={combinedClassName}
+      {...props}
     >
       {children}
     </button>
   );
 }
+
 
 

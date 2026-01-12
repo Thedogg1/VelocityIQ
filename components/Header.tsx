@@ -22,10 +22,10 @@ export default function Header() {
         
         <div className="hidden md:flex items-center gap-8">
           <Link
-            href="/platform"
+            href="/suitability"
             className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
           >
-            Platform
+            Suitability Analysis
           </Link>
           <Link
             href="/risk-defense"
@@ -34,13 +34,31 @@ export default function Header() {
             Risk Defense
           </Link>
           <Link
+            href="/risk-assessment"
+            className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
+          >
+            Risk Assessment
+          </Link>
+          <Link
+            href="/personalized-reports"
+            className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
+          >
+            Personalized Reports
+          </Link>
+          <Link
+            href="/platform"
+            className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
+          >
+            Platform
+          </Link>
+          <Link
             href="/how-it-works"
             className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors"
           >
             How It Works
           </Link>
           <Link
-            href="/demo"
+            href="/book"
             className="px-6 py-2 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-cta-hover)] transition-colors font-semibold"
           >
             Book Demo
