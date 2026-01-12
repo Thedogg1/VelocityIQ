@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: 'Platform Demo: See Decision-Support Tools in Action | VelocityIQ',
   description:
-    'Watch 10-minute demo of suitability analysis, risk identification, and AML assessment tools—all designed to support advisor professional judgment.',
+    'Watch 5-minute demo of suitability analysis, risk identification, and AML assessment tools—all designed to support advisor professional judgment.',
   keywords: [
     'platform demo',
     'software demonstration',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Platform Demo - See Decision-Support Tools in Action',
-    description: '10-minute demonstration of comprehensive analysis platform',
+    description: '5-minute demonstration of comprehensive analysis platform',
     type: 'website',
     url: 'https://getvelocityiq.com/demo',
     images: [{ url: '/images/demo-advisor-control-interface.jpg' }],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Platform Demo - See Decision-Support Tools in Action',
-    description: '10-minute demonstration of comprehensive analysis platform',
+    description: '5-minute demonstration of comprehensive analysis platform',
     images: ['/images/demo-advisor-control-interface.jpg'],
   },
   alternates: {
@@ -87,7 +87,7 @@ export default function DemoPage() {
                   className='flex items-center gap-2'
                 >
                   <Play className='w-5 h-5' />
-                  Watch 10-Minute Platform Demo
+                  Watch 5-Minute Platform Demo
                 </Button>
                 <Button href='/book' variant='secondary'>
                   Schedule Live Demo with Q&A
@@ -104,7 +104,7 @@ export default function DemoPage() {
               Platform Capabilities and Advisor Workflow
             </h2>
             <p className='text-xl text-center text-[var(--color-text-secondary)] mb-12 max-w-3xl mx-auto'>
-              Demo Structure (10 minutes)
+              Demo Structure (5 minutes)
             </p>
 
             <div className='space-y-8'>
@@ -488,9 +488,9 @@ export default function DemoPage() {
               See How Analysis Tools Support Professional Advisory Practice
             </h2>
             <p className='text-xl mb-8 text-white'>
-              10-minute demonstration of comprehensive analysis platform
-              designed to support advisor judgment while maintaining clear
-              professional responsibility.
+              5-minute demonstration of comprehensive analysis platform designed
+              to support advisor judgment while maintaining clear professional
+              responsibility.
             </p>
 
             {/* Full Platform Demo Video Embed */}

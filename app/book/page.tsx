@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
@@ -87,6 +88,25 @@ export default function BookPage() {
                 />
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Calendly Scheduling Widget */}
+        <section className="py-20 bg-white">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-4xl font-bold text-center mb-4">
+              Schedule a Call
+            </h2>
+            <p className="text-xl text-center text-[var(--color-text-secondary)] mb-8">
+              Book a 30-minute qualification call to discuss the pilot program
+            </p>
+            <Card className="p-6">
+              <div 
+                className="calendly-inline-widget" 
+                data-url="https://calendly.com/velocityiq/30min" 
+                style={{ minWidth: '320px', height: '700px' }}
+              />
+            </Card>
           </div>
         </section>
 
@@ -250,12 +270,22 @@ export default function BookPage() {
                 </div>
                 <h3 className="text-lg font-semibold mb-3">Qualification Call</h3>
                 <p className="text-xs text-[var(--color-text-secondary)] mb-2">30 minutes</p>
-                <ul className="space-y-1 text-xs text-[var(--color-text-secondary)]">
+                <ul className="space-y-1 text-xs text-[var(--color-text-secondary)] mb-3">
                   <li>→ Review platform fit</li>
                   <li>→ Discuss needs</li>
                   <li>→ Explain pilot structure</li>
                   <li>→ Assess mutual fit</li>
                 </ul>
+                <Button 
+                  href="https://calendly.com/velocityiq/30min" 
+                  variant="secondary" 
+                  className="w-full text-xs py-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Calendar className="w-4 h-4 mr-2 inline" />
+                  Schedule Call
+                </Button>
               </Card>
 
               <Card>
@@ -695,10 +725,20 @@ export default function BookPage() {
               </Card>
               <Card>
                 <h3 className="text-lg font-semibold mb-3">Within 1 Week</h3>
-                <ul className="space-y-1 text-sm text-[var(--color-text-secondary)]">
+                <ul className="space-y-1 text-sm text-[var(--color-text-secondary)] mb-3">
                   <li>→ Qualification call scheduled</li>
                   <li>→ Or polite decline (if not fit)</li>
                 </ul>
+                <Button 
+                  href="https://calendly.com/velocityiq/30min" 
+                  variant="secondary" 
+                  className="w-full text-xs py-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Calendar className="w-4 h-4 mr-2 inline" />
+                  Schedule Now
+                </Button>
               </Card>
               <Card>
                 <h3 className="text-lg font-semibold mb-3">If Qualified - Week 2</h3>
@@ -785,8 +825,8 @@ export default function BookPage() {
               <Button href="#application-form" variant="secondary" className="bg-white text-[var(--color-primary)] hover:bg-blue-50">
                 Complete Application
               </Button>
-              <Button href="mailto:admin@getvelocityiq.com?subject=January%202026%20Pilot%20Inquiry" variant="secondary" className="bg-white text-[var(--color-primary)] hover:bg-blue-50 flex items-center gap-2">
-                <Mail className="w-5 h-5" />
+              <Button href="https://calendly.com/velocityiq/30min" variant="secondary" className="bg-white text-[var(--color-primary)] hover:bg-blue-50 flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+                <Calendar className="w-5 h-5" />
                 Schedule Discussion First
               </Button>
             </div>
@@ -795,6 +835,11 @@ export default function BookPage() {
       </main>
 
       <Footer />
+      
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="lazyOnload"
+      />
     </div>
   );
 }

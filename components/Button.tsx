@@ -18,6 +18,8 @@ export default function Button({
   disabled = false,
   className = '',
   type = 'button',
+  target,
+  rel,
   ...props
 }: ButtonProps) {
   const baseStyles =
@@ -51,6 +53,20 @@ export default function Button({
         </a>
       );
     }
+    // Handle external links (http/https) with regular <a> tag to support target/rel
+    if (href.startsWith('http://') || href.startsWith('https://')) {
+      return (
+        <a
+          href={href}
+          className={combinedClassName}
+          target={target}
+          rel={rel}
+        >
+          {children}
+        </a>
+      );
+    }
+    // Internal links use next/link
     return (
       <Link href={href} className={combinedClassName}>
         {children}
@@ -70,6 +86,7 @@ export default function Button({
     </button>
   );
 }
+
 
 
 
