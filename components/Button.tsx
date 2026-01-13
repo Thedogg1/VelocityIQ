@@ -18,8 +18,6 @@ export default function Button({
   disabled = false,
   className = '',
   type = 'button',
-  target,
-  rel,
   ...props
 }: ButtonProps) {
   const baseStyles =
@@ -59,8 +57,8 @@ export default function Button({
         <a
           href={href}
           className={combinedClassName}
-          target={target}
-          rel={rel}
+          target='_blank'
+          rel='noopener noreferrer'
         >
           {children}
         </a>
@@ -86,7 +84,3 @@ export default function Button({
     </button>
   );
 }
-
-
-
-

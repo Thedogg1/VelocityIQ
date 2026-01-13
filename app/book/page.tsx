@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
-import { CheckCircle, Calendar, FileText, Users, Shield, AlertTriangle, Mail } from "lucide-react";
+import { CheckCircle, Calendar, FileText, Users, Shield, AlertTriangle, Mail, X } from "lucide-react";
 
 export default function BookPage() {
   const [formData, setFormData] = useState({
@@ -40,6 +41,11 @@ export default function BookPage() {
     },
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [showConfirmationErrorModal, setShowConfirmationErrorModal] = useState(false);
+  const [applicantEmail, setApplicantEmail] = useState<string>('');
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -55,10 +61,74 @@ export default function BookPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    alert("Application submitted! We&apos;ll review and contact you within 2 business days.");
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/submit-application', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        
+        // Store applicant email before resetting form
+        setApplicantEmail(formData.email);
+        
+        // Reset form
+        setFormData({
+          companyName: "",
+          contactName: "",
+          contactTitle: "",
+          email: "",
+          phone: "",
+          website: "",
+          numAdvisors: "",
+          numClients: "",
+          aum: "",
+          markets: "",
+          crm: "",
+          otherTech: "",
+          integrationPriorities: "",
+          interestReason: "",
+          challenges: "",
+          pilotAdvisors: "",
+          timeline: "",
+          complianceOfficer: "",
+          suitabilityApproach: "",
+          fintechExperience: "",
+          acknowledgments: {
+            decisionSupport: false,
+            advisorResponsibility: false,
+            noComplianceGuarantee: false,
+            authority: false,
+            agreementTerms: false,
+          },
+        });
+        // Scroll to top to show success message
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        setSubmitStatus('error');
+        
+        // Show modal if initial submission failed
+        if (errorData.initialSubmissionFailed) {
+          setShowConfirmationErrorModal(true);
+        }
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitStatus('error');
+      setShowConfirmationErrorModal(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -66,6 +136,77 @@ export default function BookPage() {
       <Header />
       
       <main className="flex-1">
+        {/* Success/Error Messages */}
+        {submitStatus === 'success' && (
+          <div className="bg-green-50 border-l-4 border-green-500 p-6 mb-8">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-lg font-semibold text-green-900 mb-2">Application Submitted Successfully!</h3>
+                  <p className="text-green-800 mb-2">
+                    Thank you for your application{applicantEmail && ` from ${applicantEmail}`}. We&apos;ve received your application and will review it shortly.
+                  </p>
+                  <p className="text-green-800">
+                    We&apos;ll review your application and contact you within 2 business days.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {submitStatus === 'error' && (
+          <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-lg font-semibold text-red-900 mb-2">Submission Error</h3>
+                  <p className="text-red-800 mb-2">
+                    There was an error submitting your application. Please try again or contact us directly at <a href="mailto:admin@getvelocityiq.com" className="underline font-semibold">admin@getvelocityiq.com</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Submission Error Modal */}
+        {showConfirmationErrorModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 relative">
+              <button
+                onClick={() => setShowConfirmationErrorModal(false)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                aria-label="Close modal"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              <div className="flex items-start gap-3 mb-4">
+                <AlertTriangle className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    Submission Error
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    We encountered an issue submitting your application. Please try again later, or contact us directly via SMS at <a href="sms:+447842024151" className="text-[var(--color-primary)] hover:underline font-semibold">+44 7842 024151</a>.
+                  </p>
+                  <p className="text-sm text-gray-600 mb-4">
+                    We&apos;ve been notified of this issue and will investigate immediately.
+                  </p>
+                  <button
+                    onClick={() => setShowConfirmationErrorModal(false)}
+                    className="w-full px-4 py-2 bg-[var(--color-primary)] text-white rounded-lg font-semibold hover:opacity-90 transition-opacity"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20">
           <div className="max-w-7xl mx-auto px-6">
@@ -177,7 +318,7 @@ export default function BookPage() {
           </div>
         </section>
 
-        {/* What We&apos;re Looking For */}
+        {/* What We're Looking For */}
         <section className="py-20 bg-[var(--color-surface)]">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-4xl font-bold text-center mb-12">What We&apos;re Looking For</h2>
@@ -276,16 +417,15 @@ export default function BookPage() {
                   <li>→ Explain pilot structure</li>
                   <li>→ Assess mutual fit</li>
                 </ul>
-                <Button 
-                  href="https://calendly.com/velocityiq/30min" 
-                  variant="secondary" 
-                  className="w-full text-xs py-2"
+                <Link 
+                  href="https://calendly.com/velocityiq/30min"
+                  className="inline-flex items-center justify-center w-full text-xs py-2 px-4 rounded-lg bg-[var(--color-surface)] text-[var(--color-text-primary)] hover:bg-gray-100 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Calendar className="w-4 h-4 mr-2 inline" />
+                  <Calendar className="w-4 h-4 mr-2" />
                   Schedule Call
-                </Button>
+                </Link>
               </Card>
 
               <Card>
@@ -320,7 +460,7 @@ export default function BookPage() {
         </section>
 
         {/* Application Form */}
-        <section className="py-20 bg-[var(--color-surface)]">
+        <section className="py-20 bg-[var(--color-surface)]" id="application-form">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-4xl font-bold text-center mb-12">Application Form</h2>
             <Card>
@@ -698,18 +838,20 @@ export default function BookPage() {
 
                 {/* Submit Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button type="submit" variant="primary" className="flex-1">
-                    Submit Application
-                  </Button>
-                  <Button type="button" variant="secondary" onClick={() => alert("Draft saved!")}>
-                    Save Draft
-                  </Button>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="flex-1 px-6 py-3 bg-[var(--color-primary)] text-white rounded-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Submit Application'}
+                  </button>
                 </div>
               </form>
             </Card>
           </div>
         </section>
 
+        {/* Rest of sections remain the same... */}
         {/* What Happens After Application */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
@@ -729,16 +871,15 @@ export default function BookPage() {
                   <li>→ Qualification call scheduled</li>
                   <li>→ Or polite decline (if not fit)</li>
                 </ul>
-                <Button 
-                  href="https://calendly.com/velocityiq/30min" 
-                  variant="secondary" 
-                  className="w-full text-xs py-2"
+                <Link 
+                  href="https://calendly.com/velocityiq/30min"
+                  className="inline-flex items-center justify-center w-full text-xs py-2 px-4 rounded-lg bg-[var(--color-surface)] text-[var(--color-text-primary)] hover:bg-gray-100 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Calendar className="w-4 h-4 mr-2 inline" />
+                  <Calendar className="w-4 h-4 mr-2" />
                   Schedule Now
-                </Button>
+                </Link>
               </Card>
               <Card>
                 <h3 className="text-lg font-semibold mb-3">If Qualified - Week 2</h3>
@@ -767,7 +908,7 @@ export default function BookPage() {
             <p className="text-lg text-[var(--color-text-secondary)] mb-6">
               Contact: <a href="mailto:admin@getvelocityiq.com" className="text-[var(--color-primary)] hover:underline font-semibold">admin@getvelocityiq.com</a>
             </p>
-            <p className="text-sm text-[var(--color-text-secondary)] mb-4">Subject line: "January 2026 Pilot Inquiry"</p>
+            <p className="text-sm text-[var(--color-text-secondary)] mb-4">Subject line: &quot;January 2026 Pilot Inquiry&quot;</p>
             <Card className="bg-blue-50">
               <h3 className="text-xl font-semibold mb-4">We&apos;re Happy to Discuss:</h3>
               <ul className="space-y-2 text-sm text-[var(--color-text-secondary)] text-left max-w-2xl mx-auto">
@@ -825,10 +966,15 @@ export default function BookPage() {
               <Button href="#application-form" variant="secondary" className="bg-white text-[var(--color-primary)] hover:bg-blue-50">
                 Complete Application
               </Button>
-              <Button href="https://calendly.com/velocityiq/30min" variant="secondary" className="bg-white text-[var(--color-primary)] hover:bg-blue-50 flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://calendly.com/velocityiq/30min"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-[var(--color-primary)] hover:bg-blue-50 transition-colors font-semibold"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Calendar className="w-5 h-5" />
                 Schedule Discussion First
-              </Button>
+              </Link>
             </div>
           </div>
         </section>
