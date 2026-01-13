@@ -62,7 +62,7 @@ export default function HomePage() {
         {/* HERO SECTION */}
         <section className='bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20'>
           <div className='max-w-7xl mx-auto px-6'>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12'>
               <div>
                 <h1 className='text-5xl font-bold text-[var(--color-text-primary)] mb-6 leading-tight'>
                   Reduce FINRA Violations by 80% While Recruiting Better Advisors
@@ -205,7 +205,7 @@ export default function HomePage() {
             <div className='space-y-12'>
               {/* Solution 1 */}
               <Card className='border-2 border-[var(--color-primary)]'>
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
                   <div>
                     <div className='flex items-center gap-3 mb-4'>
                       <Shield className='w-8 h-8 text-[var(--color-primary)]' />
@@ -234,7 +234,7 @@ export default function HomePage() {
 
               {/* Solution 2 */}
               <Card className='border-2 border-[var(--color-primary)]'>
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
                   <div className='order-2 lg:order-1'>
                     <Image
                       src='/images/compliance-approved-personalized-reports.png'
@@ -263,7 +263,7 @@ export default function HomePage() {
 
               {/* Solution 3 */}
               <Card className='border-2 border-[var(--color-primary)]'>
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
                   <div>
                     <div className='flex items-center gap-3 mb-4'>
                       <Eye className='w-8 h-8 text-[var(--color-primary)]' />
@@ -292,7 +292,7 @@ export default function HomePage() {
 
               {/* Solution 4 */}
               <Card className='border-2 border-[var(--color-primary)]'>
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
                   <div className='order-2 lg:order-1'>
                     <Image
                       src='/images/niche-icons-grid.png'
@@ -329,7 +329,7 @@ export default function HomePage() {
               The Business Impact
             </h2>
 
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-8'>
               <Card className='bg-red-50 border-l-4 border-[var(--color-critical)]'>
                 <h3 className='text-2xl font-semibold mb-6 text-[var(--color-text-primary)]'>
                   Current State Without VelocityIQ:
