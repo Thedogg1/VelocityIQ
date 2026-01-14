@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
+import { OpenExternalButton } from '@/components/OpenExternalButton';
 import type { Metadata } from 'next';
 import {
   Play,
@@ -81,14 +82,11 @@ export default function DemoPage() {
                 />
               </div>
               <div className='flex flex-col sm:flex-row gap-6 justify-center'>
-                <Button
-                  href='#watch-demo'
+                <OpenExternalButton
+                  url='https://www.loom.com/share/22bf0104e8e24b0795d05b0604b69d22'
+                  label='Watch 5-Minute Platform Demo'
                   variant='primary'
-                  className='flex items-center gap-2'
-                >
-                  <Play className='w-5 h-5' />
-                  Watch 5-Minute Platform Demo
-                </Button>
+                />
                 <Button href='/book' variant='secondary'>
                   Schedule Live Demo with Q&A
                 </Button>
@@ -273,31 +271,13 @@ export default function DemoPage() {
                 Rule 2111 compliance through structured suitability analysis and
                 advisor decision-making.
               </p>
-              <div className='rounded-xl shadow-lg overflow-hidden bg-white p-4'>
-                <div
-                  style={{
-                    position: 'relative',
-                    paddingBottom: '62.28373702422145%',
-                    height: 0,
-                  }}
-                >
-                  <iframe
-                    src='https://www.loom.com/embed/22bf0104e8e24b0795d05b0604b69d22'
-                    frameBorder='0'
-                    allowFullScreen
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                    }}
-                    title='FINRA Rule 211 Suitability Assessment Demonstration'
-                  />
-                </div>
-              </div>
-              <div className='mt-6 text-center'>
-                <p className='text-sm text-[var(--color-text-secondary)]'>
+              <div className='rounded-xl shadow-lg overflow-hidden bg-white p-8 flex flex-col items-center justify-center min-h-[300px]'>
+                <OpenExternalButton
+                  url='https://www.loom.com/share/22bf0104e8e24b0795d05b0604b69d22'
+                  label='Watch FINRA Rule 211 Suitability Assessment Demo'
+                  variant='primary'
+                />
+                <p className='text-sm text-[var(--color-text-secondary)] mt-6 text-center max-w-2xl'>
                   This demonstration shows how the platform structures client
                   profile data, performs three-prong suitability analysis, and
                   provides documentation to support advisor suitability
@@ -493,29 +473,13 @@ export default function DemoPage() {
               responsibility.
             </p>
 
-            {/* Full Platform Demo Video Embed */}
-            <div className='mb-8 rounded-xl shadow-lg overflow-hidden bg-white p-4'>
-              <div
-                style={{
-                  position: 'relative',
-                  paddingBottom: '56.25%',
-                  height: 0,
-                }}
-              >
-                <iframe
-                  src='https://www.loom.com/embed/22bf0104e8e24b0795d05b0604b69d22'
-                  frameBorder='0'
-                  allowFullScreen
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                  }}
-                  title='VelocityIQ Platform Demonstration'
-                />
-              </div>
+            {/* Full Platform Demo Video Button */}
+            <div className='mb-8 rounded-xl shadow-lg overflow-hidden bg-white p-8 flex flex-col items-center justify-center min-h-[300px]'>
+              <OpenExternalButton
+                url='https://www.loom.com/share/22bf0104e8e24b0795d05b0604b69d22'
+                label='Watch Full Platform Demonstration'
+                variant='primary'
+              />
             </div>
 
             <div className='flex flex-col sm:flex-row gap-6 justify-center'>

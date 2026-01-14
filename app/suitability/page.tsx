@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
+import { OpenExternalButton } from '@/components/OpenExternalButton';
 import type { Metadata } from 'next';
 import {
   Shield,
@@ -66,9 +67,11 @@ export default function SuitabilityAnalysisPage() {
                   and client recommendations.
                 </p>
                 <div className='flex flex-col sm:flex-row gap-4 mb-8'>
-                  <Button href='/demo' variant='primary'>
-                    Watch Suitability Framework Demo
-                  </Button>
+                  <OpenExternalButton
+                    url='https://www.loom.com/share/22bf0104e8e24b0795d05b0604b69d22'
+                    label='Watch Suitability Framework Demo'
+                    variant='primary'
+                  />
                   <Button href='/book' variant='secondary'>
                     Download Framework Overview
                   </Button>
@@ -1468,13 +1471,12 @@ export default function SuitabilityAnalysisPage() {
               determinations.
             </p>
             <div className='flex flex-col sm:flex-row gap-6 justify-center mb-8'>
-              <Button
-                href='/demo'
+              <OpenExternalButton
+                url='https://www.loom.com/share/22bf0104e8e24b0795d05b0604b69d22'
+                label='Watch Framework Demo'
                 variant='secondary'
-                className='bg-white text-[var(--color-primary)] hover:bg-blue-50'
-              >
-                Watch Framework Demo
-              </Button>
+                className='bg-white text-[var(--color-primary)] hover:bg-blue-50 border-0'
+              />
               <Button
                 href='/book'
                 variant='secondary'

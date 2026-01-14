@@ -83,7 +83,7 @@ Deterministic execution—same inputs always produce same outputs, fully reprodu
 Zero silent errors by design—validation before calculation, consistency checking during processing, result verification after computation
 Regulatory framework integration—FINRA Rule 2111 and FinCEN methodology embedded in core architecture
 
-You're not buying experimental AI from a tech startup. You're buying compliance-first architecture from someone who brings 25+ years of financial services rigor to wealth management.
+You're not buying experimental AI from a tech startup. You're buying compliance-first architecture from someone who brings banking compliance systems experience and 11+ years of software development rigor.
 
 SEE IT IN ACTION
 Schedule a 15-minute demonstration to see how VelocityIQ's compliance-first architecture provides systematic risk assessment and FINRA Rule 2111 documentation your platform can defend.

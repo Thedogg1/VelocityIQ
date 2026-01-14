@@ -3,11 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
+import { OpenExternalButton } from "@/components/OpenExternalButton";
 import { CheckCircle, Calendar, FileText, Users, Shield, AlertTriangle, Mail, X } from "lucide-react";
 
 export default function BookPage() {
@@ -232,7 +232,7 @@ export default function BookPage() {
           </div>
         </section>
 
-        {/* Calendly Scheduling Widget */}
+        {/* Calendly Scheduling Button */}
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-4xl font-bold text-center mb-4">
@@ -241,12 +241,16 @@ export default function BookPage() {
             <p className="text-xl text-center text-[var(--color-text-secondary)] mb-8">
               Book a 30-minute qualification call to discuss the pilot program
             </p>
-            <Card className="p-6">
-              <div 
-                className="calendly-inline-widget" 
-                data-url="https://calendly.com/velocityiq/30min" 
-                style={{ minWidth: '320px', height: '700px' }}
+            <Card className="p-8 flex flex-col items-center justify-center min-h-[300px]">
+              <OpenExternalButton
+                url="https://calendly.com/velocityiq/30min"
+                label="Schedule 30-Minute Qualification Call"
+                variant="primary"
               />
+              <p className="text-sm text-[var(--color-text-secondary)] mt-6 text-center max-w-2xl">
+                Click the button above to open the scheduling page in a new tab. 
+                You&apos;ll be able to select a time that works best for you.
+              </p>
             </Card>
           </div>
         </section>
@@ -981,11 +985,6 @@ export default function BookPage() {
       </main>
 
       <Footer />
-      
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="lazyOnload"
-      />
     </div>
   );
 }

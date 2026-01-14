@@ -565,7 +565,7 @@ export default function HomePage() {
 
               <Card className='bg-amber-50 border-l-4 border-[var(--color-warning)] text-center'>
                 <p className='text-lg font-semibold text-[var(--color-text-primary)]'>
-                  You&apos;re not buying experimental AI from a tech startup. You&apos;re buying compliance-first architecture from someone who brings 25+ years of financial services rigor to wealth management.
+                  You&apos;re not buying experimental AI from a tech startup. You&apos;re buying compliance-first architecture built by someone with banking-grade compliance experience and over a decade of software development rigor.
                 </p>
               </Card>
             </div>
