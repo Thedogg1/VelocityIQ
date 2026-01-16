@@ -41,9 +41,10 @@
   --radius-lg: 0.5rem;
 
   /* Elevation */
-  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-overlay: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-card:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-overlay:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   /* Focus */
   --focus-ring-color: #00b4d8;
@@ -60,7 +61,11 @@
 body {
   background: var(--color-bg);
   color: var(--color-text-primary);
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-family:
+    var(--font-inter),
+    system-ui,
+    -apple-system,
+    sans-serif;
   line-height: 1.6;
 }
 
@@ -99,4 +104,28 @@ h3 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Blog Typography */
+.prose {
+  max-width: 65ch; /* ~60-80 characters per line */
+  line-height: 1.6;
+}
+
+.prose p {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.6;
+  color: var(--color-text-primary);
+}
+
+.prose ul li,
+.prose ol li {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.prose blockquote {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.6;
 }
