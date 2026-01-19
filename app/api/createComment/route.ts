@@ -36,6 +36,15 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  // Check if write token is available (server-side only)
+  const writeToken = process.env.SANITY_API_READ_TOKEN || process.env.SANITY_API_WRITE_TOKEN;
+  if (!writeToken) {
+    return NextResponse.json(
+      { error: 'SANITY_API_READ_TOKEN or SANITY_API_WRITE_TOKEN is required for comment creation. Token must have Write permissions.' },
+      { status: 500 }
+    );
+  }
+
   try {
     await client.create({
       _type: 'comment',

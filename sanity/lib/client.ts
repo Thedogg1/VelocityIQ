@@ -7,5 +7,6 @@ export const client = createClient({
   dataset,
   apiVersion,
   useCdn: true,
-  token,
+  // Token is optional - only needed for write operations or Studio
+  ...(token && { token }),
 });
