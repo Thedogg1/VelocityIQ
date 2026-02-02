@@ -17,22 +17,22 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'FINRA Rule 2111 Suitability Analysis Framework | VelocityIQ',
-  description: 'Three-prong suitability analysis tools aligned with FINRA Rule 2111. Support your determinations with systematic evaluation of reasonable-basis, customer-specific, and quantitative factors.',
-  keywords: ['FINRA Rule 2111', 'suitability determination', 'reasonable-basis suitability', 'customer-specific suitability', 'quantitative suitability', 'investment profile analysis', 'advisor compliance tools'],
+  title: 'AI-Powered FINRA 2111 Suitability Assessment: From Natural Language to Audit-Ready Documentation | VelocityIQ',
+  description: 'Transform how your advisors document strategy recommendations. Natural language input, intelligent AI classification, and automated three-prong analysis deliver complete FINRA-compliant documentation in minutes—not hours. Scalable across your entire platform with consistent methodology, transparent calculations, and complete audit trails.',
+  keywords: ['AI-powered suitability assessment', 'FINRA Rule 2111', 'natural language input', 'automated suitability analysis', 'platform scalability', 'compliance documentation', 'advisor productivity'],
   openGraph: {
-    title: 'FINRA Rule 2111 Suitability Analysis Framework',
-    description: 'Three-prong analysis tools supporting advisor suitability determinations',
+    title: 'AI-Powered FINRA 2111 Suitability Assessment',
+    description: 'Natural language input to audit-ready documentation in minutes. Scalable across your entire platform.',
     type: 'website',
     url: 'https://getvelocityiq.com/suitability',
-    images: [{ url: '/images/three-prong-framework-advisor-decides.jpg' }],
+    images: [{ url: '/images/three-prong-framework-advisor-decides.v2.png' }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FINRA Rule 2111 Suitability Analysis Framework',
-    description: 'Three-prong analysis tools supporting advisor suitability determinations',
-    images: ['/images/three-prong-framework-advisor-decides.jpg'],
+    title: 'AI-Powered FINRA 2111 Suitability Assessment',
+    description: 'Natural language input to audit-ready documentation in minutes. Scalable across your entire platform.',
+    images: ['/images/three-prong-framework-advisor-decides.v2.png'],
   },
   alternates: {
     canonical: 'https://getvelocityiq.com/suitability',
@@ -55,44 +55,32 @@ export default function SuitabilityAnalysisPage() {
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
               <div>
                 <h1 className='text-5xl font-bold text-[var(--color-text-primary)] mb-6'>
-                  FINRA Rule 2111: Analysis Framework to Support Your
-                  Suitability Determinations
+                  AI-Powered FINRA 2111 Suitability Assessment: From Natural Language to Audit-Ready Documentation
                 </h1>
                 <p className='text-xl text-[var(--color-text-secondary)] mb-8 leading-relaxed'>
-                  VelocityIQ provides systematic three-prong analysis tools
-                  aligned with FINRA Rule 2111 requirements. These
-                  decision-support frameworks help you evaluate strategies
-                  thoroughly and document your analysis—while you retain full
-                  professional responsibility for all suitability determinations
-                  and client recommendations.
+                  Transform how your advisors document strategy recommendations. Natural language input, intelligent AI classification, and automated three-prong analysis deliver complete FINRA-compliant documentation in minutes—not hours. Scalable across your entire platform with consistent methodology, transparent calculations, and complete audit trails. Advisors maintain full professional responsibility while productivity soars.
                 </p>
                 <div className='flex flex-col sm:flex-row gap-4 mb-8'>
                   <OpenExternalButton
-                    url='https://www.loom.com/share/22bf0104e8e24b0795d05b0604b69d22'
-                    label='Watch Suitability Framework Demo'
+                    url='https://www.loom.com/share/PLACEHOLDER'
+                    label='Watch Assessment Demo'
                     variant='primary'
                   />
-                  <Button href='/book' variant='secondary'>
-                    Download Framework Overview
+                  <Button href='#sample-output' variant='secondary'>
+                    See Sample Output
                   </Button>
                 </div>
-                <div className='bg-amber-50 p-6 rounded-lg border-l-4 border-[var(--color-warning)]'>
-                  <p className='font-semibold mb-2'>IMPORTANT:</p>
+                <div className='bg-red-50 p-6 rounded-lg border-l-4 border-[var(--color-critical)]'>
+                  <p className='font-semibold mb-2 text-[var(--color-critical)]'>IMPORTANT:</p>
                   <p className='text-sm text-[var(--color-text-secondary)]'>
-                    VelocityIQ provides analysis tools and evaluation frameworks
-                    to support advisor decision-making. The system does NOT make
-                    suitability determinations or investment recommendations.
-                    Advisors must review system analysis, apply professional
-                    judgment, and make their own suitability determinations.
-                    Advisors are solely responsible for all determinations and
-                    recommendations to clients.
+                    VelocityIQ provides analysis tools and evaluation frameworks to support advisor decision-making. The system analyses strategies and generates documentation, but does NOT make suitability determinations. Advisors must review system analysis, apply professional judgment, and make their own suitability determinations. Advisors are solely responsible for all determinations and recommendations to clients.
                   </p>
                 </div>
               </div>
               <div className='relative'>
                 <Image
                   src='/images/hero-advisor-suitability-judgment.png'
-                  alt='Professional advisor reviewing suitability analysis and making professional determination'
+                  alt='Professional advisor reviewing AI-powered suitability assessment and making professional determination'
                   width={800}
                   height={600}
                   className='rounded-xl shadow-2xl'
@@ -107,7 +95,7 @@ export default function SuitabilityAnalysisPage() {
         <section className='py-20 bg-white'>
           <div className='max-w-7xl mx-auto px-6'>
             <h2 className='text-4xl font-bold text-center mb-4'>
-              The Advisor&apos;s Legal Obligation
+              The Advisor&apos;s Regulatory Obligation
             </h2>
             <div className='max-w-4xl mx-auto'>
               <Card className='mb-8'>
@@ -135,6 +123,39 @@ export default function SuitabilityAnalysisPage() {
                       reasonable basis
                     </li>
                   </ul>
+                </div>
+                <div className='mb-6'>
+                  <h4 className='font-semibold mb-3'>The Documentation Challenge:</h4>
+                  <p className='text-[var(--color-text-secondary)] mb-4'>
+                    Traditional approach requires advisors to:
+                  </p>
+                  <ul className='space-y-2 text-[var(--color-text-secondary)] mb-4'>
+                    <li>• Manually evaluate all investment profile factors</li>
+                    <li>• Document consideration of each FINRA-required element</li>
+                    <li>• Apply three-prong suitability framework</li>
+                    <li>• Create defensible audit trail</li>
+                    <li>• Maintain consistency across all clients</li>
+                    <li>• Complete documentation that withstands regulatory scrutiny</li>
+                  </ul>
+                  <p className='font-semibold text-[var(--color-text-secondary)] mb-2'>
+                    Time Required: 2-5 hours per complex strategy recommendation
+                  </p>
+                </div>
+                <div className='bg-green-50 p-4 rounded-lg border-l-4 border-[var(--color-success)]'>
+                  <h4 className='font-semibold mb-3'>The VelocityIQ Solution:</h4>
+                  <p className='text-[var(--color-text-secondary)] mb-4'>
+                    AI-powered assessment that:
+                  </p>
+                  <ul className='space-y-2 text-[var(--color-text-secondary)] mb-4'>
+                    <li>• Automates framework application</li>
+                    <li>• Generates complete documentation</li>
+                    <li>• Ensures consistent methodology</li>
+                    <li>• Creates transparent audit trail</li>
+                    <li>• Maintains advisor control and responsibility</li>
+                  </ul>
+                  <p className='font-semibold text-[var(--color-success)]'>
+                    Time Required: 5-15 minutes per assessment (80-90% reduction)
+                  </p>
                 </div>
                 <div className='bg-blue-50 p-4 rounded mb-4'>
                   <p className='font-semibold mb-3'>
@@ -203,27 +224,175 @@ export default function SuitabilityAnalysisPage() {
           </div>
         </section>
 
-        {/* Three-Prong Analysis Framework */}
+        {/* How the AI-Powered Assessment Works */}
         <section className='py-20 bg-[var(--color-surface)]'>
           <div className='max-w-7xl mx-auto px-6'>
             <h2 className='text-4xl font-bold text-center mb-4'>
-              Systematic Evaluation Tools for Each FINRA Component
+              Four Steps from Strategy Description to Complete Documentation
             </h2>
             <p className='text-xl text-center text-[var(--color-text-secondary)] mb-12 max-w-3xl mx-auto'>
-              VelocityIQ provides analysis tools for each of the three
-              suitability components. You review the system-generated analysis,
-              apply your professional judgment to the client&apos;s unique
-              situation, and make your determination.
+              VelocityIQ&apos;s AI-powered assessment transforms suitability documentation from hours of manual work to minutes of automated analysis—while maintaining advisor control and professional responsibility.
             </p>
 
             <div className='mb-12'>
               <Image
                 src='/images/three-prong-framework-advisor-decides.v2.png'
-                alt='Three-prong analysis framework flowchart showing advisor decision points'
+                alt='Four-step AI-powered suitability assessment process flowchart'
                 width={1200}
                 height={600}
                 className='rounded-xl shadow-lg mx-auto'
               />
+            </div>
+
+            {/* Step 1: Natural Language Strategy Input */}
+            <Card className='mb-8 border-2 border-[var(--color-primary)]'>
+              <div className='flex items-center gap-4 mb-6'>
+                <div className='bg-[var(--color-primary)] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0'>
+                  <span className='text-2xl font-bold'>1</span>
+                </div>
+                <div>
+                  <h3 className='text-3xl font-bold text-[var(--color-text-primary)]'>
+                    Natural Language Strategy Input
+                  </h3>
+                </div>
+              </div>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+                <div>
+                  <h4 className='text-xl font-semibold mb-4'>What Makes This Different:</h4>
+                  <div className='mb-4'>
+                    <p className='font-semibold mb-2 text-sm'>Traditional systems require:</p>
+                    <ul className='space-y-1 text-sm text-[var(--color-text-secondary)]'>
+                      <li className='flex items-start gap-2'>
+                        <XCircle className='w-4 h-4 text-[var(--color-critical)] mt-0.5 flex-shrink-0' />
+                        <span>Complex forms with dozens of fields</span>
+                      </li>
+                      <li className='flex items-start gap-2'>
+                        <XCircle className='w-4 h-4 text-[var(--color-critical)] mt-0.5 flex-shrink-0' />
+                        <span>Product codes and classification systems</span>
+                      </li>
+                      <li className='flex items-start gap-2'>
+                        <XCircle className='w-4 h-4 text-[var(--color-critical)] mt-0.5 flex-shrink-0' />
+                        <span>Manual calculations and data entry</span>
+                      </li>
+                      <li className='flex items-start gap-2'>
+                        <XCircle className='w-4 h-4 text-[var(--color-critical)] mt-0.5 flex-shrink-0' />
+                        <span>Rigid category selections</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className='font-semibold mb-2 text-sm'>VelocityIQ accepts natural language:</p>
+                    <ul className='space-y-1 text-sm text-[var(--color-text-secondary)]'>
+                      <li className='flex items-start gap-2'>
+                        <CheckCircle className='w-4 h-4 text-[var(--color-success)] mt-0.5 flex-shrink-0' />
+                        <span>&quot;Post-exit portfolio: low-volatility, cash-flow-focused allocation to support lifestyle and legacy&quot;</span>
+                      </li>
+                      <li className='flex items-start gap-2'>
+                        <CheckCircle className='w-4 h-4 text-[var(--color-success)] mt-0.5 flex-shrink-0' />
+                        <span>&quot;Sell the business and build an income portfolio&quot;</span>
+                      </li>
+                      <li className='flex items-start gap-2'>
+                        <CheckCircle className='w-4 h-4 text-[var(--color-success)] mt-0.5 flex-shrink-0' />
+                        <span>&quot;Execute QSBS-optimised exit with post-liquidity diversification&quot;</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className='bg-blue-50 p-4 rounded-lg'>
+                  <p className='font-semibold mb-2'>Platform Benefit:</p>
+                  <p className='text-sm text-[var(--color-text-secondary)]'>
+                    Eliminates training overhead on complex classification systems. Advisors can describe strategies naturally without learning proprietary coding schemes.
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            {/* Step 2: AI Classification with Advisor Review */}
+            <Card className='mb-8 border-2 border-[var(--color-primary)]'>
+              <div className='flex items-center gap-4 mb-6'>
+                <div className='bg-[var(--color-primary)] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0'>
+                  <span className='text-2xl font-bold'>2</span>
+                </div>
+                <div>
+                  <h3 className='text-3xl font-bold text-[var(--color-text-primary)]'>
+                    AI Classification & Advisor Review
+                  </h3>
+                </div>
+              </div>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+                <div>
+                  <h4 className='text-xl font-semibold mb-4'>What the AI Does:</h4>
+                  <p className='text-sm text-[var(--color-text-secondary)] mb-4'>
+                    The system analyses the strategy description alongside the client&apos;s investment profile and automatically classifies:
+                  </p>
+                  <div className='space-y-3'>
+                    <div>
+                      <p className='font-semibold mb-1 text-sm'>1. Risk Level Classification</p>
+                      <ul className='text-xs text-[var(--color-text-secondary)] ml-4'>
+                        <li>• Low Risk: Capital preservation, stable income</li>
+                        <li>• Medium Risk: Balanced growth/income</li>
+                        <li>• High Risk: Aggressive growth, concentration, leverage</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className='font-semibold mb-1 text-sm'>2. Strategy Type Identification</p>
+                      <ul className='text-xs text-[var(--color-text-secondary)] ml-4'>
+                        <li>• Liquidity Event: Business sale, inheritance</li>
+                        <li>• Portfolio Restructuring: Reallocation, diversification</li>
+                        <li>• Ongoing Management: Regular investment</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className='font-semibold mb-1 text-sm'>3. Time Horizon Assessment</p>
+                      <ul className='text-xs text-[var(--color-text-secondary)] ml-4'>
+                        <li>• Short-term: 0-3 years</li>
+                        <li>• Medium-term: 3-10 years</li>
+                        <li>• Long-term: 10+ years</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className='font-semibold mb-1 text-sm'>4. Experience Level Required</p>
+                      <ul className='text-xs text-[var(--color-text-secondary)] ml-4'>
+                        <li>• Basic: Plain-vanilla investments</li>
+                        <li>• Intermediate: Some complexity</li>
+                        <li>• Advanced: Sophisticated strategies</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className='bg-green-50 p-4 rounded-lg'>
+                  <p className='font-semibold mb-2'>Advisor Control:</p>
+                  <ul className='space-y-1 text-sm text-[var(--color-text-secondary)]'>
+                    <li>• Review each AI classification</li>
+                    <li>• See rationale for AI&apos;s determination</li>
+                    <li>• Modify any classification as needed</li>
+                    <li>• Proceed when satisfied with categorization</li>
+                  </ul>
+                  <p className='mt-4 text-sm text-[var(--color-text-secondary)]'>
+                    <span className='font-semibold'>Why This Matters:</span> Advisor maintains professional judgment while benefiting from AI assistance. AI handles initial categorization (saves time). Advisor verifies appropriateness (maintains control).
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            {/* Step 3: Automated Three-Prong Suitability Analysis */}
+            <div className='mb-8'>
+              <div className='flex items-center gap-4 mb-6'>
+                <div className='bg-[var(--color-primary)] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0'>
+                  <span className='text-2xl font-bold'>3</span>
+                </div>
+                <div>
+                  <h3 className='text-3xl font-bold text-[var(--color-text-primary)]'>
+                    Automated Three-Prong Suitability Analysis
+                  </h3>
+                  <p className='text-lg text-[var(--color-text-secondary)] mt-2'>
+                    Comprehensive FINRA Framework Evaluation with Transparent Scoring
+                  </p>
+                </div>
+              </div>
+              <p className='text-[var(--color-text-secondary)] mb-6 max-w-3xl'>
+                Using the AI classifications and client investment profile, the system automatically evaluates the strategy against FINRA&apos;s three-prong framework, generating quantified scores with factual basis for each indicator.
+              </p>
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>
@@ -736,6 +905,77 @@ export default function SuitabilityAnalysisPage() {
                 </div>
               </Card>
             </div>
+
+            {/* Step 4: Complete Compliance Documentation */}
+            <Card className='mt-8 border-2 border-[var(--color-primary)]'>
+              <div className='flex items-center gap-4 mb-6'>
+                <div className='bg-[var(--color-primary)] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0'>
+                  <span className='text-2xl font-bold'>4</span>
+                </div>
+                <div>
+                  <h3 className='text-3xl font-bold text-[var(--color-text-primary)]'>
+                    Complete Compliance Documentation
+                  </h3>
+                </div>
+              </div>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+                <div>
+                  <h4 className='text-xl font-semibold mb-4'>What the System Produces:</h4>
+                  <p className='text-sm text-[var(--color-text-secondary)] mb-4'>
+                    The system automatically generates comprehensive suitability assessment documentation including:
+                  </p>
+                  <div className='space-y-3'>
+                    <div>
+                      <p className='font-semibold mb-1 text-sm'>1. Executive Summary</p>
+                      <ul className='text-xs text-[var(--color-text-secondary)] ml-4'>
+                        <li>• Overall suitability score (0-100)</li>
+                        <li>• System assessment: Clearly Suitable / Suitable / Marginal / Unsuitable</li>
+                        <li>• Key findings summary</li>
+                        <li>• Notable considerations flagged</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className='font-semibold mb-1 text-sm'>2. Three-Prong Detailed Analysis</p>
+                      <ul className='text-xs text-[var(--color-text-secondary)] ml-4'>
+                        <li>• All indicator scores with factual basis</li>
+                        <li>• AI-generated explanations for each indicator</li>
+                        <li>• Pass/Fail determination for each prong</li>
+                        <li>• Supporting data and calculations</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className='font-semibold mb-1 text-sm'>3. Complete Audit Trail</p>
+                      <ul className='text-xs text-[var(--color-text-secondary)] ml-4'>
+                        <li>• Strategy description (original natural language input)</li>
+                        <li>• AI classifications with rationale</li>
+                        <li>• Any advisor modifications to classifications</li>
+                        <li>• Client investment profile data used</li>
+                        <li>• Timestamp and system version</li>
+                        <li>• Complete calculation methodology</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className='font-semibold mb-1 text-sm'>4. Advisor Action Required Section</p>
+                      <ul className='text-xs text-[var(--color-text-secondary)] ml-4'>
+                        <li>• Clear statement that advisor must review and determine</li>
+                        <li>• Checklist of advisor responsibilities</li>
+                        <li>• Space for advisor determination and signature</li>
+                        <li>• Documentation of professional judgment applied</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className='bg-amber-50 p-4 rounded-lg border-l-4 border-[var(--color-warning)]'>
+                  <p className='font-semibold mb-2'>What Advisor Does:</p>
+                  <p className='text-sm text-[var(--color-text-secondary)] mb-4'>
+                    Reviews system output, applies professional judgment, and records their final determination.
+                  </p>
+                  <p className='text-sm font-semibold text-[var(--color-primary)]'>
+                    System analyses. Advisor determines.
+                  </p>
+                </div>
+              </div>
+            </Card>
           </div>
         </section>
 
@@ -1066,6 +1306,170 @@ export default function SuitabilityAnalysisPage() {
                   <p className='text-sm text-[var(--color-text-secondary)] mt-2'>
                     System analysis supports but does not replace your
                     documentation of professional judgment and determination.
+                  </p>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Sample Complete Assessment Output */}
+        <section className='py-20 bg-white'>
+          <div className='max-w-7xl mx-auto px-6'>
+            <h2 className='text-4xl font-bold text-center mb-4' id='sample-output'>
+              Example: Business Exit with Portfolio Diversification
+            </h2>
+            <div className='max-w-5xl mx-auto'>
+              <Card className='bg-gray-50 font-mono text-xs'>
+                <div className='space-y-4'>
+                  <div className='border-b-2 border-[var(--color-primary)] pb-2'>
+                    <p className='font-bold text-sm'>VELOCITYIQ FINRA 2111 SUITABILITY ASSESSMENT</p>
+                    <p>Generated: 2026-01-15 14:22:35 EST</p>
+                    <p>Advisor: Jennifer Martinez, CFP® | Platform: Quantum Wealth RIA</p>
+                    <p>Client: Michael Harrington (Age 40) | Net Worth: $70M</p>
+                  </div>
+                  <div>
+                    <p className='font-semibold mb-2'>STRATEGY DESCRIPTION (Natural Language Input)</p>
+                    <p className='italic'>&quot;Post-exit portfolio: low-volatility, cash-flow-focused allocation to support lifestyle and legacy goals following business sale. Diversify from concentrated position while maintaining growth potential for multi-generational wealth.&quot;</p>
+                  </div>
+                  <div>
+                    <p className='font-semibold mb-2'>AI CLASSIFICATION (Advisor Reviewed: ✓)</p>
+                    <ul className='ml-4 space-y-1'>
+                      <li>• Risk Level: MEDIUM</li>
+                      <li>• Strategy Type: LIQUIDITY EVENT + PORTFOLIO CONSTRUCTION</li>
+                      <li>• Time Horizon: LONG-TERM (25+ years)</li>
+                      <li>• Experience Required: INTERMEDIATE</li>
+                    </ul>
+                  </div>
+                  <div className='bg-green-50 p-3 rounded'>
+                    <p className='font-semibold mb-2'>✓ PRONG 1: REASONABLE-BASIS SUITABILITY - PASS</p>
+                    <p className='ml-4'>Strategy Configuration: 100/100</p>
+                    <p className='ml-4'>Risk Level vs Experience: 100/100</p>
+                  </div>
+                  <div className='bg-green-50 p-3 rounded'>
+                    <p className='font-semibold mb-2'>✓ PRONG 2: CUSTOMER-SPECIFIC SUITABILITY - PASS</p>
+                    <p className='ml-4'>Risk Tolerance Alignment: 80/100</p>
+                    <p className='ml-4'>Time Horizon Match: 100/100</p>
+                    <p className='ml-4'>Liquidity Coverage: 100/100</p>
+                    <p className='ml-4'>Concentration Level: 100/100</p>
+                  </div>
+                  <div className='bg-green-50 p-3 rounded'>
+                    <p className='font-semibold mb-2'>✓ PRONG 3: QUANTITATIVE SUITABILITY - PASS</p>
+                    <p className='ml-4'>Strategy Size vs Net Worth: 100/100</p>
+                    <p className='ml-4'>Concentration Change: 100/100</p>
+                    <p className='ml-4'>Net Risk Direction: 100/100</p>
+                  </div>
+                  <div className='border-t-2 border-[var(--color-primary)] pt-4'>
+                    <p className='font-bold mb-2'>OVERALL SYSTEM ASSESSMENT</p>
+                    <p className='text-lg font-bold text-[var(--color-success)]'>Total Score: 97/100</p>
+                    <p className='font-semibold'>Assessment: CLEARLY SUITABLE</p>
+                  </div>
+                  <div className='bg-amber-50 p-3 rounded border-l-4 border-[var(--color-warning)]'>
+                    <p className='font-semibold mb-2'>⚠ ADVISOR ACTION REQUIRED</p>
+                    <p className='text-xs mb-2'>This assessment provides analysis and documentation to support your suitability determination. You must:</p>
+                    <ul className='ml-4 space-y-1 text-xs'>
+                      <li>☐ Review complete assessment and all indicator scores</li>
+                      <li>☐ Verify accuracy of client profile data used</li>
+                      <li>☐ Consider factors unique to client relationship</li>
+                      <li>☐ Apply professional judgment and expertise</li>
+                      <li>☐ Make final suitability determination</li>
+                      <li>☐ Document your determination and reasoning</li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+              <p className='text-xs text-[var(--color-text-secondary)] mt-4 italic text-center'>
+                LEGAL NOTICE: This assessment provides analysis tools and evaluation frameworks. The system analyses strategies and generates documentation but does NOT make suitability determinations. The advisor must review all system analysis, apply independent professional judgment, and make the final suitability determination.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Platform Scalability */}
+        <section className='py-20 bg-[var(--color-surface)]'>
+          <div className='max-w-7xl mx-auto px-6'>
+            <h2 className='text-4xl font-bold text-center mb-4'>
+              One System, Every Advisor, Uniform Quality
+            </h2>
+            <div className='max-w-4xl mx-auto'>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mb-8'>
+                <Card className='bg-red-50 border-l-4 border-[var(--color-critical)]'>
+                  <h3 className='text-xl font-semibold mb-4'>Without Systematic Tools:</h3>
+                  <ul className='space-y-2 text-sm text-[var(--color-text-secondary)]'>
+                    <li className='flex items-start gap-2'>
+                      <XCircle className='w-4 h-4 text-[var(--color-critical)] mt-0.5 flex-shrink-0' />
+                      <span>Each advisor documents suitability differently</span>
+                    </li>
+                    <li className='flex items-start gap-2'>
+                      <XCircle className='w-4 h-4 text-[var(--color-critical)] mt-0.5 flex-shrink-0' />
+                      <span>Quality varies based on individual thoroughness</span>
+                    </li>
+                    <li className='flex items-start gap-2'>
+                      <XCircle className='w-4 h-4 text-[var(--color-critical)] mt-0.5 flex-shrink-0' />
+                      <span>No visibility into methodology consistency</span>
+                    </li>
+                    <li className='flex items-start gap-2'>
+                      <XCircle className='w-4 h-4 text-[var(--color-critical)] mt-0.5 flex-shrink-0' />
+                      <span>Difficult to demonstrate systematic approach in exams</span>
+                    </li>
+                    <li className='flex items-start gap-2'>
+                      <XCircle className='w-4 h-4 text-[var(--color-critical)] mt-0.5 flex-shrink-0' />
+                      <span>Training new advisors takes weeks</span>
+                    </li>
+                  </ul>
+                </Card>
+
+                <Card className='bg-green-50 border-l-4 border-[var(--color-success)]'>
+                  <h3 className='text-xl font-semibold mb-4'>With VelocityIQ Platform Deployment:</h3>
+                  <ul className='space-y-2 text-sm text-[var(--color-text-secondary)]'>
+                    <li className='flex items-start gap-2'>
+                      <CheckCircle className='w-4 h-4 text-[var(--color-success)] mt-0.5 flex-shrink-0' />
+                      <span>Same AI-powered analysis for all advisors</span>
+                    </li>
+                    <li className='flex items-start gap-2'>
+                      <CheckCircle className='w-4 h-4 text-[var(--color-success)] mt-0.5 flex-shrink-0' />
+                      <span>Identical scoring framework applied uniformly</span>
+                    </li>
+                    <li className='flex items-start gap-2'>
+                      <CheckCircle className='w-4 h-4 text-[var(--color-success)] mt-0.5 flex-shrink-0' />
+                      <span>80-90% time reduction per assessment</span>
+                    </li>
+                    <li className='flex items-start gap-2'>
+                      <CheckCircle className='w-4 h-4 text-[var(--color-success)] mt-0.5 flex-shrink-0' />
+                      <span>Compliance dashboard showing usage patterns</span>
+                    </li>
+                    <li className='flex items-start gap-2'>
+                      <CheckCircle className='w-4 h-4 text-[var(--color-success)] mt-0.5 flex-shrink-0' />
+                      <span>Demonstrate systematic approach to examiners</span>
+                    </li>
+                  </ul>
+                </Card>
+              </div>
+
+              <Card className='bg-blue-50 border-l-4 border-[var(--color-primary)] mb-8'>
+                <h3 className='text-xl font-semibold mb-4'>ROI Example for 50-Advisor Platform:</h3>
+                <div className='space-y-3 text-sm text-[var(--color-text-secondary)]'>
+                  <div>
+                    <p className='font-semibold mb-2'>Traditional approach:</p>
+                    <ul className='ml-4 space-y-1'>
+                      <li>• Average assessments per advisor per month: 12</li>
+                      <li>• Time per assessment: 3 hours</li>
+                      <li>• Total monthly hours: 1,800 hours</li>
+                      <li>• Annual hours: 21,600 hours</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className='font-semibold mb-2'>With VelocityIQ:</p>
+                    <ul className='ml-4 space-y-1'>
+                      <li>• Time per assessment: 15 minutes</li>
+                      <li>• Total monthly hours: 150 hours</li>
+                      <li>• Annual hours: 1,800 hours</li>
+                      <li>• <span className='font-bold'>Time saved: 19,800 hours annually</span></li>
+                      <li>• <span className='font-bold'>At $150/hour: $2.97M recovered advisor productivity</span></li>
+                    </ul>
+                  </div>
+                  <p className='mt-4 text-xs'>
+                    Plus: Compliance cost reduction, improved advisor satisfaction, enhanced recruitment capability, reduced regulatory risk
                   </p>
                 </div>
               </Card>
@@ -1460,20 +1864,15 @@ export default function SuitabilityAnalysisPage() {
         <section className='py-20 bg-[var(--color-primary)]'>
           <div className='max-w-4xl mx-auto px-6 text-center'>
             <h2 className='text-4xl font-bold mb-4 !text-white'>
-              Systematic Analysis Framework to Support Your Professional
-              Judgment
+              Transform Suitability Documentation Across Your Platform
             </h2>
             <p className='text-xl mb-12 text-white'>
-              See how VelocityIQ&apos;s three-prong analysis framework helps you
-              evaluate strategies against FINRA 2111 requirements with
-              systematic methodology and audit trail documentation—while you
-              maintain full professional responsibility for all suitability
-              determinations.
+              See how VelocityIQ&apos;s AI-powered FINRA 2111 suitability assessment transforms advisor productivity while ensuring consistent, defensible methodology across your entire network—with natural language input, transparent scoring, and complete advisor control.
             </p>
             <div className='flex flex-col sm:flex-row gap-6 justify-center mb-8'>
               <OpenExternalButton
-                url='https://www.loom.com/share/22bf0104e8e24b0795d05b0604b69d22'
-                label='Watch Framework Demo'
+                url='https://www.loom.com/share/PLACEHOLDER'
+                label='Watch Assessment Demo'
                 variant='secondary'
                 className='bg-white text-[var(--color-primary)] hover:bg-blue-50 border-0'
               />
@@ -1485,11 +1884,11 @@ export default function SuitabilityAnalysisPage() {
                 Apply for January Pilot
               </Button>
             </div>
-            <p className='text-white text-sm'>
-              VelocityIQ provides decision-support tools. Advisors make
-              suitability determinations. Advisors are solely responsible for
-              recommendations.
-            </p>
+            <Card className='bg-white/10 backdrop-blur text-white border-white/20 text-left'>
+              <p className='text-sm text-white'>
+                <span className='font-semibold'>Legal Notice:</span> VelocityIQ provides analysis tools and frameworks. Advisors review system output, apply professional judgment, and make all suitability determinations. Advisors are solely responsible for recommendations. Platforms maintain all supervisory responsibilities.
+              </p>
+            </Card>
           </div>
         </section>
       </main>
