@@ -795,7 +795,7 @@ export default function RiskAssessmentPage() {
               making AML risk determinations and due diligence decisions.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-              <Button href="/demo" variant="secondary" className="bg-white text-[var(--color-primary)] hover:bg-blue-50">
+              <Button href="/system-demo" variant="secondary" className="bg-white text-[var(--color-primary)] hover:bg-blue-50">
                 Watch AML Tools Demo
               </Button>
               <Button href="/book" variant="secondary" className="bg-white text-[var(--color-primary)] hover:bg-blue-50">

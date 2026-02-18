@@ -14,6 +14,7 @@ import {
   XCircle,
   FileText,
   AlertTriangle,
+  Play,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -61,11 +62,10 @@ export default function SuitabilityAnalysisPage() {
                   Transform how your advisors document strategy recommendations. Natural language input, intelligent AI classification, and automated three-prong analysis deliver complete FINRA-compliant documentation in minutes—not hours. Scalable across your entire platform with consistent methodology, transparent calculations, and complete audit trails. Advisors maintain full professional responsibility while productivity soars.
                 </p>
                 <div className='flex flex-col sm:flex-row gap-4 mb-8'>
-                  <OpenExternalButton
-                    url='https://www.loom.com/share/PLACEHOLDER'
-                    label='Watch Assessment Demo'
-                    variant='primary'
-                  />
+                  <Button href='/system-demo' variant='primary' className='flex items-center gap-2'>
+                    <Play className='w-5 h-5' />
+                    Watch Assessment Demo
+                  </Button>
                   <Button href='#sample-output' variant='secondary'>
                     See Sample Output
                   </Button>
@@ -1870,12 +1870,14 @@ export default function SuitabilityAnalysisPage() {
               See how VelocityIQ&apos;s AI-powered FINRA 2111 suitability assessment transforms advisor productivity while ensuring consistent, defensible methodology across your entire network—with natural language input, transparent scoring, and complete advisor control.
             </p>
             <div className='flex flex-col sm:flex-row gap-6 justify-center mb-8'>
-              <OpenExternalButton
-                url='https://www.loom.com/share/PLACEHOLDER'
-                label='Watch Assessment Demo'
+              <Button
+                href='/system-demo'
                 variant='secondary'
-                className='bg-white text-[var(--color-primary)] hover:bg-blue-50 border-0'
-              />
+                className='bg-white text-[var(--color-primary)] hover:bg-blue-50 border-0 flex items-center gap-2'
+              >
+                <Play className='w-5 h-5' />
+                Watch Assessment Demo
+              </Button>
               <Button
                 href='/book'
                 variant='secondary'

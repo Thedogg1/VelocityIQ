@@ -96,11 +96,10 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className='flex flex-col sm:flex-row gap-4 mb-4'>
-                  <OpenExternalButton
-                    url='https://www.loom.com/share/PLACEHOLDER'
-                    label='Watch 10-Minute Platform Demo'
-                    variant='primary'
-                  />
+                  <Button href='/system-demo' variant='primary' className='flex items-center gap-2'>
+                    <Play className='w-5 h-5' />
+                    Watch 10-Minute Platform Demo
+                  </Button>
                   <Button href='/suitability' variant='secondary'>
                     See FINRA Assessment Tools
                   </Button>
@@ -1072,11 +1071,10 @@ export default function HomePage() {
             </div>
 
             <div className='flex flex-col sm:flex-row gap-4 justify-center mb-8'>
-              <OpenExternalButton
-                url='https://www.loom.com/share/PLACEHOLDER'
-                label='Watch Platform Demo'
-                variant='primary'
-              />
+              <Button href='/system-demo' variant='primary' className='flex items-center gap-2'>
+                <Play className='w-5 h-5' />
+                Watch Platform Demo
+              </Button>
               <Button href='/book' variant='secondary'>
                 Apply for Pilot Program
               </Button>

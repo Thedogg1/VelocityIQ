@@ -682,7 +682,7 @@ export default function PlatformPage() {
               to AML assessment—all designed to support your professional judgment.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-              <Button href="/demo" variant="secondary" className="bg-white text-[var(--color-primary)] hover:bg-blue-50">
+              <Button href="/system-demo" variant="secondary" className="bg-white text-[var(--color-primary)] hover:bg-blue-50">
                 Watch Platform Demo
               </Button>
               <Button href="/book" variant="secondary" className="bg-white text-[var(--color-primary)] hover:bg-blue-50">
