@@ -163,9 +163,10 @@ export default function FeedbackForm() {
         body: JSON.stringify(formData),
       });
 
+      const responseData = await res.json();
+
       if (res.ok) {
         // Check if email was provided before resetting
-        const hadEmail = formData.email && formData.email.trim() !== '';
         setSubmittedWithEmail(!!(formData.email && formData.email.trim() !== ''));
 
         setSubmitted(true);
@@ -180,12 +181,13 @@ export default function FeedbackForm() {
           optIn: false,
         });
       } else {
-        const data = await res.json();
-        alert(data.error || 'Error sending feedback. Please try again.');
+        console.error('API Error:', responseData);
+        alert(responseData.error || 'Error sending feedback. Please try again.');
       }
     } catch (err) {
-      console.error(err);
-      alert('Error sending feedback. Please try again.');
+      console.error('Submission error:', err);
+      const errorMessage = err instanceof Error ? err.message : 'Network error occurred';
+      alert(`Error sending feedback: ${errorMessage}. Please check your connection and try again.`);
     } finally {
       setLoading(false);
     }

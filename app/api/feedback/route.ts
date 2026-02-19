@@ -4,8 +4,27 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
+  // Check if Resend API key is configured
+  if (!process.env.RESEND_API_KEY) {
+    console.error('❌ RESEND_API_KEY is not configured in environment variables');
+    console.error('For localhost: Create .env.local file in project root with: RESEND_API_KEY=re_xxxxx');
+    console.error('For Vercel: Set RESEND_API_KEY in project settings → Environment Variables');
+    console.error('⚠️ Email sending will fail, but form submission will continue');
+  } else {
+    console.log('✅ RESEND_API_KEY is configured');
+  }
+
   try {
-    const formData = await request.json();
+    let formData;
+    try {
+      formData = await request.json();
+    } catch {
+      return NextResponse.json(
+        { error: 'Invalid JSON in request body' },
+        { status: 400 }
+      );
+    }
+
     const {
       name,
       clarity,
@@ -41,73 +60,69 @@ export async function POST(request: NextRequest) {
       </p>
     `;
 
-    const { data, error } = await resend.emails.send({
-      from: 'VelocityIQ Feedback <onboarding@getvelocityiq.com>',
-      to: ['admin@getvelocityiq.com'],
-      subject: 'New VelocityIQ Feedback Submission',
-      html: feedbackHtml,
-    });
+    // Log to console for backup (matching wrigitail pattern)
+    console.log('='.repeat(80));
+    console.log('NEW FEEDBACK SUBMISSION');
+    console.log('='.repeat(80));
+    console.log(`Name: ${name}`);
+    console.log(`Email: ${email || 'Not provided'}`);
+    console.log(`Clarity: ${clarity} ⭐`);
+    console.log(`Workflow: ${workflow} ⭐`);
+    console.log(`Useful Features: ${usefulFeatures}`);
+    console.log(`Missing Features: ${missingFeatures || 'None'}`);
+    console.log(`Improvements: ${improvements || 'None'}`);
+    console.log(`Opt-in: ${optIn ? 'Yes' : 'No'}`);
+    console.log('='.repeat(80));
 
-    if (error) {
-      console.error('Resend error (feedback email failed):', error);
-
-      // Send error notification email to admin about the failure
-      try {
-        await resend.emails.send({
-          from: 'VelocityIQ System <onboarding@getvelocityiq.com>',
-          to: ['admin@getvelocityiq.com'],
-          subject: '⚠️ Feedback Submission Failed - Email Error',
-          html: `
-            <h2>Feedback Submission Failed</h2>
-            
-            <p><strong>The feedback submission email failed to send.</strong></p>
-            
-            <h3>Attempted Feedback Details:</h3>
-            <p><strong>Name:</strong> ${name || 'Not provided'}</p>
-            <p><strong>Email:</strong> ${email || 'Not provided'}</p>
-            <p><strong>Clarity:</strong> ${clarity} ⭐</p>
-            <p><strong>Workflow:</strong> ${workflow} ⭐</p>
-            <p><strong>Useful Features:</strong> ${usefulFeatures}</p>
-            
-            <h3>Error Details:</h3>
-            <pre style="background: #f5f5f5; padding: 10px; border-radius: 4px; overflow-x: auto;">
-${JSON.stringify(error, null, 2)}
-            </pre>
-            
-            <p><strong>Action Required:</strong> Feedback was not received. User may try again.</p>
-            
-            <hr>
-            <p style="font-size: 12px; color: #666;">
-              <em>Timestamp: ${new Date().toLocaleString()}</em>
-            </p>
-          `,
-        });
-      } catch (adminErrorError) {
-        console.error(
-          'Failed to send error notification to admin:',
-          adminErrorError
-        );
+    // Send email using Resend (matching working wrigitail pattern)
+    try {
+      const emailResult = await resend.emails.send({
+        from: 'VelocityIQ Feedback <admin@getvelocityiq.com>',
+        to: ['admin@getvelocityiq.com'],
+        subject: 'New VelocityIQ Feedback Submission',
+        html: feedbackHtml,
+        replyTo: email || undefined,
+      });
+      
+      if (emailResult.error) {
+        console.error('⚠️ Resend returned an error:', emailResult.error);
+        console.error('Error details:', JSON.stringify(emailResult.error, null, 2));
+      } else {
+        console.log('✅ Email sent successfully to admin@getvelocityiq.com');
+        console.log('Email ID:', emailResult.data?.id);
       }
-
-      return NextResponse.json(
-        { error: 'Failed to send feedback email' },
-        { status: 500 }
-      );
+    } catch (emailError) {
+      console.error('⚠️ Email sending failed with exception:', emailError);
+      console.error('Error details:', emailError instanceof Error ? emailError.message : String(emailError));
+      // Continue anyway - don't block the user (matching wrigitail pattern)
     }
 
-    // Return success
+    // Return success response
+    return NextResponse.json({
+      success: true,
+      message: 'Feedback submitted successfully',
+    });
+  } catch (error) {
+    console.error('Error processing feedback submission:', error);
     return NextResponse.json(
       {
-        success: true,
-        data,
+        success: false,
+        message: 'Failed to process submission',
+        error: error instanceof Error ? error.message : 'Unknown error',
       },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error('Feedback submission error:', error);
-    return NextResponse.json(
-      { error: 'Failed to submit feedback' },
       { status: 500 }
     );
   }
+}
+
+// Handle OPTIONS requests for CORS
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
 }
