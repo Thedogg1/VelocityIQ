@@ -24,8 +24,7 @@ export default function Footer() {
             </p>
             <p className='text-xs text-white opacity-90'>
               Mission: To build AI systems for financial advisors that meet the
-              regulatory standards required in banking—not because compliance is
-              innovative, but because it&apos;s the foundation advisors deserve.
+              regulatory standards required in banking.
             </p>
           </div>
 

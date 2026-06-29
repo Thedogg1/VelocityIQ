@@ -83,6 +83,12 @@ export default function Header() {
             Blog
           </Link>
           <Link
+            href='/exit-snapshot'
+            className='text-xs xl:text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors whitespace-nowrap hidden xl:block'
+          >
+            Exit Snapshot
+          </Link>
+          <Link
             href='/book'
             className='px-3 xl:px-4 2xl:px-6 py-1.5 xl:py-2 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-cta-hover)] transition-colors font-semibold text-xs xl:text-sm whitespace-nowrap flex-shrink-0'
           >
@@ -157,6 +163,13 @@ export default function Header() {
               onClick={closeMenu}
             >
               Blog
+            </Link>
+            <Link
+              href='/exit-snapshot'
+              className='text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors py-2'
+              onClick={closeMenu}
+            >
+              Exit Snapshot
             </Link>
             <Link
               href='/book'
