@@ -92,7 +92,6 @@
       letter-spacing: -0.01em;
     }
 
-    /* Legend badges */
     .legend {
       display: flex;
       gap: 20px;
@@ -116,7 +115,6 @@
     .legend-dot.mandatory { background: var(--cyan); }
     .legend-dot.optional  { background: var(--danger); }
 
-    /* Fields form card */
     .fields-card {
       background: var(--card-bg);
       border-radius: 10px;
@@ -143,7 +141,6 @@
       color: var(--text-muted);
     }
 
-    /* Individual field rows */
     .fields-list {
       padding: 8px 0;
       max-height: 440px;
@@ -202,11 +199,6 @@
       font-family: 'Inter', monospace;
     }
 
-    .field-value:focus {
-      outline: none;
-      border-color: var(--cyan);
-    }
-
     .remove-btn {
       background: var(--danger);
       color: var(--white);
@@ -219,7 +211,6 @@
       flex-shrink: 0;
     }
 
-    /* ── Right: explanation panel ── */
     .explain-panel {
       background: var(--navy);
       padding: 48px 48px;
@@ -274,7 +265,6 @@
 <body>
   <div class="slide">
 
-    <!-- Left: Approved Fields form -->
     <div class="form-panel">
       <div class="report-brand">
         <div class="report-brand-name">Velocity<span>IQ</span></div>
@@ -297,7 +287,7 @@
       <div class="fields-card">
         <div class="fields-card-header">
           <span class="fields-card-header-title">Approved Fields</span>
-          <span class="fields-card-header-meta">Robert Hartley — Hartley Precision Components Ltd</span>
+          <span class="fields-card-header-meta">Marcus T. Ellison — Ellison Dynamics</span>
         </div>
 
         <div class="fields-list">
@@ -305,42 +295,42 @@
           <div class="field-row">
             <div class="field-label">Business Value <span class="required-star">*</span></div>
             <div class="field-input-row">
-              <input class="field-value" type="text" value="8280000" readonly />
+              <input class="field-value" type="text" value="145000000" readonly />
             </div>
           </div>
 
           <div class="field-row">
             <div class="field-label">Gross Income <span class="required-star">*</span></div>
             <div class="field-input-row">
-              <input class="field-value" type="text" value="620000" readonly />
+              <input class="field-value" type="text" value="14800000" readonly />
             </div>
           </div>
 
           <div class="field-row">
             <div class="field-label">Annual Lifestyle <span class="required-star">*</span></div>
             <div class="field-input-row">
-              <input class="field-value" type="text" value="195000" readonly />
+              <input class="field-value" type="text" value="620000" readonly />
             </div>
           </div>
 
           <div class="field-row">
             <div class="field-label">Annual Tax Burden <span class="required-star">*</span></div>
             <div class="field-input-row">
-              <input class="field-value" type="text" value="248000" readonly />
+              <input class="field-value" type="text" value="5550000" readonly />
             </div>
           </div>
 
           <div class="field-row">
             <div class="field-label">Liquid Cash <span class="required-star">*</span></div>
             <div class="field-input-row">
-              <input class="field-value" type="text" value="1150000" readonly />
+              <input class="field-value" type="text" value="4200000" readonly />
             </div>
           </div>
 
           <div class="field-row">
             <div class="field-label">Years Owned <span class="optional-tag">Optional</span></div>
             <div class="field-input-row">
-              <input class="field-value" type="text" value="22" readonly />
+              <input class="field-value" type="text" value="9" readonly />
               <button class="remove-btn">Remove</button>
             </div>
           </div>
@@ -348,7 +338,7 @@
           <div class="field-row">
             <div class="field-label">Business Name <span class="optional-tag">Optional</span></div>
             <div class="field-input-row">
-              <input class="field-value" type="text" value="Hartley Precision Components Ltd" readonly />
+              <input class="field-value" type="text" value="Ellison Dynamics" readonly />
               <button class="remove-btn">Remove</button>
             </div>
           </div>
@@ -356,7 +346,7 @@
           <div class="field-row">
             <div class="field-label">Industry <span class="optional-tag">Optional</span></div>
             <div class="field-input-row">
-              <input class="field-value" type="text" value="Precision Engineering &amp; Manufacturing" readonly />
+              <input class="field-value" type="text" value="Industrial Robotics &amp; Automation" readonly />
               <button class="remove-btn">Remove</button>
             </div>
           </div>
@@ -364,7 +354,7 @@
           <div class="field-row">
             <div class="field-label">Exit Timeline <span class="optional-tag">Optional</span></div>
             <div class="field-input-row">
-              <input class="field-value" type="text" value="Short (1–3y)" readonly />
+              <input class="field-value" type="text" value="12–18 months" readonly />
               <button class="remove-btn">Remove</button>
             </div>
           </div>
@@ -372,7 +362,7 @@
           <div class="field-row">
             <div class="field-label">Cost Basis <span class="optional-tag">Optional</span></div>
             <div class="field-input-row">
-              <input class="field-value" type="text" value="95000" readonly />
+              <input class="field-value" type="text" value="110000" readonly />
               <button class="remove-btn">Remove</button>
             </div>
           </div>
@@ -381,16 +371,14 @@
       </div>
     </div>
 
-    <!-- Right: explanation cards -->
     <div class="explain-panel">
       <p class="slide-eyebrow">Review &amp; Approve</p>
       <h1 class="slide-title">AI Generates. You Approve.</h1>
 
       <div class="explain-cards">
-
         <div class="explain-card">
           <h3 class="explain-card-title">Formula-Driven</h3>
-          <p class="explain-card-body">VelocityIQ extracts and calculates a personalised set of financial figures from your notes — ready for your review.</p>
+          <p class="explain-card-body">VelocityIQ extracts and calculates a personalized set of financial figures from your notes — ready for your review.</p>
         </div>
 
         <div class="explain-card">
@@ -399,12 +387,10 @@
         </div>
 
         <div class="explain-card">
-          <h3 class="explain-card-title">Adviser-Approved</h3>
-          <p class="explain-card-body">Every figure is formula-driven and adviser-approved — so the adviser can justify every number if challenged.</p>
+          <h3 class="explain-card-title">Advisor-Approved</h3>
+          <p class="explain-card-body">Every figure is formula-driven and advisor-approved — so the advisor can justify every number if challenged.</p>
         </div>
-
       </div>
-
     </div>
 
   </div>

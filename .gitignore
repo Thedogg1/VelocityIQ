@@ -97,3 +97,4 @@ lerna-debug.log*
 
 # UK landing lead captures (local file storage)
 /data/uk-leads.jsonl
+/data/us-leads.jsonl
