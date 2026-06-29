@@ -1,18 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
-
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-  display: 'swap',
-});
-
-const robotoMono = Roboto_Mono({
-  variable: '--font-mono',
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -53,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en-US'>
-      <body className={`${inter.variable} ${robotoMono.variable} antialiased`}>
+      <body className='antialiased'>
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{

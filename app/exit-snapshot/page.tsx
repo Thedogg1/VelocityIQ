@@ -48,7 +48,7 @@ export default function ExitSnapshotPage() {
 
         <div className='max-w-4xl mx-auto px-6 py-12'>
 
-          <ExitSnapshotCalculator variant='standalone' />
+          <ExitSnapshotCalculator />
 
         </div>
 
