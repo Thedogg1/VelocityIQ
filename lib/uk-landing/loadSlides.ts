@@ -13,7 +13,7 @@ function prepareSlideHtmlForEmbed(rawHtml: string): string {
 }
 
 export function loadPresentationSlides(): UkPresentationSlide[] {
-  const slidesDir = path.join(process.cwd(), 'docs', 'Landing_Page');
+  const slidesDir = path.join(process.cwd(), 'content', 'uk-landing', 'slides');
 
   return UK_LANDING_SLIDES.map((slide) => {
     const filePath = path.join(slidesDir, slide.file);

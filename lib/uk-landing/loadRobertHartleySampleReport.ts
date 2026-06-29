@@ -7,12 +7,8 @@ export interface RobertHartleySampleAttachment {
 }
 
 const SEARCH_PATHS = [
-  // Production — must live here (committed to git, deployed with the app)
   path.join(process.cwd(), 'public', 'demo', 'UK_General_Main_Report.pdf'),
   path.join(process.cwd(), 'public', 'demo', 'robert-hartley-intelligence-report.html'),
-  // Local / author reference (docs/ is gitignored — not available on Vercel unless copied)
-  path.join(process.cwd(), 'docs', 'Landing_Page', 'UK_General_Main_Report.pdf'),
-  path.join(process.cwd(), 'docs', 'Landing_Page', 'robert-hartley-intelligence-report.html'),
 ];
 
 export function getRobertHartleySamplePath(): string {
