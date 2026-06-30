@@ -72,6 +72,7 @@ export default function LandingExitCalculator() {
         {reportGenerated && calculated && (
           <div ref={resultsRef} id='calculator-results' className='scroll-mt-24'>
             <LandingExitPreview
+              inputs={formState}
               calculated={calculated}
               matchedRules={matchedRules}
               inputsStale={inputsChangedSinceReport}
